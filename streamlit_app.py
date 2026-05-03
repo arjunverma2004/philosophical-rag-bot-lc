@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # Importing from your project modules
 from data_loader import load_data
 from vector_db import create_vector_db, add_documents
-from chains import get_chain
+from prompt_llm import get_brain
 from text_splliter import split_text_into_chunks
 from retriever import retrieve_with_mmr
 
@@ -89,7 +89,7 @@ if st.button("Generate Answer"):
                 # Initialize retrieval and the LangChain pipeline
                 vector_db = create_vector_db()
                 retriever = retrieve_with_mmr(vector_db)
-                chain = get_chain()
+                chain = get_brain()
                 
                 # Retrieve documents and generate the response
                 retrieved_docs = retriever.invoke(query)
@@ -110,7 +110,7 @@ if st.button("Generate Answer"):
                         # The actual text is stored in the page_content attribute
                         st.write(doc.page_content) 
                         st.divider() # Adds a neat visual line between chunks
-                        
+
                 # Save the response to the directory
                 timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
                 response_filename = f"response_{timestamp}.txt"

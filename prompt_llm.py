@@ -6,7 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 
 
-def get_chain():
+def get_brain():
     template = """
     You are a careful reader of philosophical texts.
 
@@ -52,7 +52,7 @@ def get_chain():
 
 if __name__ == "__main__":    
 
-    chain = get_chain()
+    chain = get_brain()
 
     response = chain.invoke({
         "context": "In 'The Stranger', Camus explores the absurdity of life...",
