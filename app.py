@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-data = load_data("The_Stranger_Albert_Camus-removed-removed.pdf")
+data = load_data("books/The_Stranger_Albert_Camus-removed-removed.pdf")
 chunks = split_text_into_chunks(data)
 vector_db = create_vector_db()
 add_documents(vector_db, chunks)

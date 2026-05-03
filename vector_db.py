@@ -8,7 +8,7 @@ load_dotenv()
 
 
 def create_vector_db():
-    embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", model_kwargs={"device": "cpu"})
     vector_db = Chroma(collection_name="my_collection", embedding_function=embeddings, persist_directory='my_chroma_db')
     return vector_db
 

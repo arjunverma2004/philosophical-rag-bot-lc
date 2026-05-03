@@ -39,7 +39,7 @@ def get_brain():
     )
 
 
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0.7)
+    llm = ChatGoogleGenerativeAI(model="gemma-3-27b-it", temperature=0.7)
 
     parser = StrOutputParser()
 
